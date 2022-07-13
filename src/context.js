@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import sublinks from "./data";
 const AppContext = React.createContext();
 
-const AppProvider = ({ props }) => {
+const AppProvider = ({ children }) => {
   const [isSidebar, setIsSidebar] = useState(false);
   const [isSubMenu, setIsSubMenu] = useState(false);
   const [page, setPage] = useState({ page: "", links: [] });
@@ -38,7 +38,7 @@ const AppProvider = ({ props }) => {
         location,
       }}
     >
-      {props}
+      {children}
     </AppContext.Provider>
   );
 };
